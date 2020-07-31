@@ -1,5 +1,5 @@
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
-import { map } from 'rxjs/operators';
+import { map, skip } from 'rxjs/operators';
 
 export abstract class FirestoreCrudService<T> {
     protected ref: AngularFirestoreCollection<T> = null;
@@ -11,10 +11,15 @@ export abstract class FirestoreCrudService<T> {
     get() {
         return this.ref.snapshotChanges().pipe(map(changes => 
             changes.map(c => 
-                ({id: c.payload.doc.id, ...c.payload.doc.data()})
-                )
+                ({id: c.payload.doc.id, ...c.payload.doc.data() as T})
             )
-        );
+        ));
+    }
+
+    getById(id: string) {
+        return this.ref.doc(id).snapshotChanges().pipe(map(changes => {
+            return {id: changes.payload.id, ...changes.payload.data() as T};
+        }))
     }
 
     create(newObject: T) {

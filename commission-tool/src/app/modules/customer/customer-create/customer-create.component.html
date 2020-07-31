@@ -1,1 +1,67 @@
-<p>customer-create works!</p>
+<h1>Create Customer</h1>
+<form [formGroup]="form" (ngSubmit)="submit()">
+    
+    <mat-form-field appearance="outline">
+        <mat-label>Name</mat-label>
+        <input matInput placeholder="Michat Morel" formControlName="name">
+    </mat-form-field>
+    
+    <br>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Discord</mat-label>
+        <input matInput placeholder="Koala#1537" formControlName="discord">
+        <mat-icon matSuffix svgIcon="discord"></mat-icon>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Twitter</mat-label>
+        <input matInput placeholder="bigbotkoala" formControlName="twitter">
+        <mat-icon matSuffix svgIcon="twitter"></mat-icon>
+    </mat-form-field>
+
+    <br>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Twitch</mat-label>
+        <input matInput placeholder="bigbotkoala" formControlName="twitch">
+        <mat-icon matSuffix svgIcon="twitch"></mat-icon>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Instagram</mat-label>
+        <input matInput placeholder="bigbotkoala" formControlName="instagram">
+        <mat-icon matSuffix svgIcon="instagram"></mat-icon>
+    </mat-form-field>
+
+    <br>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Email</mat-label>
+        <input matInput placeholder="michal.morel@ziggo.nl" formControlName="email">
+        <mat-icon matSuffix>email</mat-icon>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Paypal Email</mat-label>
+        <input type="email" matInput placeholder="michal.morel@ziggo.nl" formControlName="paypal_email">
+        <mat-icon matSuffix svgIcon="paypal"></mat-icon>
+    </mat-form-field>
+
+    <br>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Fiverr</mat-label>
+        <input matInput placeholder="Fiverr" formControlName="fiverr">
+        <mat-icon matSuffix svgIcon="fiverr"></mat-icon>
+    </mat-form-field>
+
+    <br>
+
+    <mat-slide-toggle formControlName="disabled">Disabled</mat-slide-toggle>
+
+    <br><br>
+
+    <button type="submit" mat-raised-button color="primary" [disabled]="disableSubmit">Submit</button>
+      
+</form>

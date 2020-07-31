@@ -1,0 +1,42 @@
+.mat-row:hover {
+    background-color: lightgray;
+    cursor: default;
+}
+
+h1 {
+    display: inline-block;
+}
+
+button.icon-add-object {
+    float: right;
+    margin-top: 1%;
+}
+
+table {
+    width: 100%;
+    text-align: left;
+}
+
+.td-hover:hover {
+    color: blue;
+    cursor: copy;
+}
+
+.td-center {
+    text-align: center;
+}
+
+mat-form-field.half-width {
+    width: 50%;
+    font-size: 17.5px;
+}
+
+div.nc {
+    margin-top: 25px;
+    color: red;
+}
+
+.td-action-buttons mat-icon:hover {
+    color: #1976d2;
+    cursor: pointer;
+}
